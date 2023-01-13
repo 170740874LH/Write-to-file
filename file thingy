@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.io.*;
+/**
+ * InnerfilePractice
+ */
+
+public class filePractice {
+    static Scanner Keyboard = new Scanner(System.in);
+    public static void main(String[] args) throws IOException{
+        
+        System.out.println("enter Name");
+        String name = Keyboard.nextLine();
+
+        System.out.println("enter Age");
+        String age = Keyboard.nextLine();
+
+        System.out.println("enter fav TV program");
+        String favTvPro = Keyboard.nextLine();
+
+
+
+        String fileName = "writeExample.txt";
+
+        File writeFile = new File(fileName);
+
+            if(!writeFile.exists()){
+                writeFile.createNewFile();
+            }   
+        FileWriter fw = new FileWriter(writeFile.getAbsoluteFile());
+        BufferedWriter bw = new BufferedWriter(fw);
+
+        
+        
+        bw.write(name);
+        bw.write(" " + age + "\n");
+        bw.write(favTvPro);
